@@ -92,7 +92,8 @@ Hình 5: Điểm hạnh phúc theo khu vực
 Biểu đồ boxplot so sánh mức độ hạnh phúc giữa các khu vực.
 Một số khu vực như châu Âu và Bắc Mỹ có mức hạnh phúc cao hơn, trong khi các khu vực khác có mức thấp hơn và biến động lớn hơn.
 Điều này phản ánh sự khác biệt về điều kiện kinh tế và xã hội giữa các khu vực.
-![Uploading image.png…]()
+<img width="741" height="459" alt="image" src="https://github.com/user-attachments/assets/06ab7c7b-4054-44d9-a41c-0f90ae1d43ca" />
+
 
 
 
