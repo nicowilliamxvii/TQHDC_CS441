@@ -48,7 +48,8 @@ Biểu đồ thể hiện 10 quốc gia có điểm hạnh phúc cao nhất và 
 Kết quả cho thấy sự khác biệt rõ rệt giữa hai nhóm. Các quốc gia hạnh phúc nhất thường có điểm số trên 7 và chủ yếu thuộc các khu vực phát triển.
 Ngược lại, các quốc gia kém hạnh phúc có điểm số thấp hơn nhiều, thường dưới 4.
 Điều này cho thấy các yếu tố như kinh tế, sức khỏe và hỗ trợ xã hội có ảnh hưởng lớn đến mức độ hạnh phúc.
-<img width="682" height="403" alt="image" src="https://github.com/user-attachments/assets/e39ef049-71c6-4b13-bd0b-2531dfe71d09" />
+<img width="744" height="525" alt="image" src="https://github.com/user-attachments/assets/944ce073-face-4254-9117-f5398e1a295f" />
+
 
 
 3.2 Phân bố điểm hạnh phúc
