@@ -1,123 +1,91 @@
-PHÂN TÍCH DỮ LIỆU WORLD HAPPINESS REPORT
+BÁO CÁO PHÂN TÍCH DỮ LIỆU GIÁ NHÀ
+Phân tích 2000 căn nhà với 10 đặc trưng: Giá, Diện tích, Phòng ngủ, Phòng tắm, Tầng, Năm xây, Vị trí, Tình trạng, Garage
 
-1. Vấn đề (Problem)
-1.1 Giới thiệu
-Hạnh phúc là một trong những chỉ số quan trọng phản ánh chất lượng cuộc sống và mức độ hài lòng của con người trong xã hội. Việc phân tích mức độ hạnh phúc giữa các quốc gia giúp hiểu rõ hơn về tác động của các yếu tố kinh tế, xã hội và sức khỏe đối với đời sống con người.
-Trong dự án này, bộ dữ liệu World Happiness Report được sử dụng để khám phá các xu hướng và yếu tố ảnh hưởng đến mức độ hạnh phúc trên toàn thế giới. Dữ liệu cung cấp thông tin về điểm hạnh phúc của các quốc gia cùng với nhiều yếu tố liên quan như GDP, sức khỏe, hỗ trợ xã hội và tự do cá nhân.
-Mục tiêu của dự án là sử dụng các kỹ thuật trực quan hóa dữ liệu để phân tích và hiểu rõ hơn về các yếu tố ảnh hưởng đến hạnh phúc.
+Ngày báo cáo: 15/05/2026,Nguyễn Vạn Thiên Lộc - 2202137
 
-1.2 Câu hỏi nghiên cứu
-Dự án nhằm trả lời các câu hỏi sau:
-Quốc gia nào có mức độ hạnh phúc cao nhất và thấp nhất?
-Những yếu tố nào ảnh hưởng đến mức độ hạnh phúc?
-Có mối quan hệ giữa GDP và hạnh phúc không?
-Mức độ hạnh phúc có khác nhau giữa các khu vực không?
+MỤC LỤC
+1. Tổng quan dữ liệu
+2. Conversation 1: So sánh giá theo vị trí
+3. Conversation 2: Phòng tắm và giá nhà
+4. Conversation 3: Tình trạng nhà và giá
+5. Conversation 4: Garage và giá nhà
+6. Tổng kết và khuyến nghị
 
+1. TỔNG QUAN DỮ LIỆU
+Cấu trúc dữ liệu
+Tên cột	Kiểu dữ liệu	Mô tả
+Id	int64	Mã định danh căn nhà
+Area	int64	Diện tích (sqft)
+Bedrooms	int64	Số phòng ngủ
+Bathrooms	int64	Số phòng tắm
+Floors	int64	Số tầng
 
-2. Dữ liệu (Data)
-2.1 Mô tả bộ dữ liệu
-Bộ dữ liệu được sử dụng là World Happiness Report Dataset, bao gồm thông tin của hơn 150 quốc gia.
-Dữ liệu cung cấp điểm số hạnh phúc và các yếu tố liên quan nhằm phân tích mức độ hạnh phúc trên toàn cầu.
+Thống kê nhanh
+- Số lượng mẫu: 2000 căn nhà
+- Giá nhà: từ ~50,000 đến gần 1,000,000
+- Diện tích: từ ~500 sqft đến ~5,000 sqft
+- Năm xây dựng: từ 1900 đến 2023
+- Phân phối giá: lệch phải (nhiều nhà giá thấp, một vài nhà giá rất cao)
 
-2.2 Các biến chính
-Các biến quan trọng trong bộ dữ liệu gồm:
-Country – Tên quốc gia
-Happiness Score – Điểm hạnh phúc
-Economy – GDP bình quân đầu người
-Family – Hỗ trợ xã hội
-Health – Tuổi thọ
-Freedom – Tự do lựa chọn
-Generosity – Mức độ hào phóng
-Corruption – Nhận thức về tham nhũng
-Region – Khu vực
+2. CONVERSATION 1: SO SÁNH GIÁ THEO VỊ TRÍ
+Câu chuyện chính
+"Downtown có thực sự đắt hơn Suburban và Rural không? Dữ liệu 2000 căn nhà cho thấy điều bất ngờ."
+Key Insight
+Sau khi phân tích 2000 căn nhà từ dữ liệu, chúng tôi phát hiện ra rằng: Downtown không phải lúc nào cũng đắt nhất. Mặc dù nhiều người nghĩ rằng trung tâm thành phố là nơi có giá trị nhất, nhưng thực tế cho thấy Urban mới là khu vực có giá trung bình cao nhất, trong khi Downtown chỉ đứng thứ hai. Điều này có thể do Urban tập trung nhiều căn hộ cao cấp, tiện ích hiện đại và mật độ dân cư đông đúc.
 
-2.3 Khám phá dữ liệu
-Dữ liệu được xử lý bằng Python với các bước:
-Kiểm tra cấu trúc dữ liệu
-Kiểm tra kiểu dữ liệu
-Kiểm tra giá trị thiếu
-Thống kê mô tả (mean, min, max)
-Kết quả cho thấy dữ liệu đầy đủ và phù hợp cho việc phân tích.
+Đặc biệt, top 10% những căn nhà đắt nhất không tập trung ở Downtown, mà lại phân bố khá đều giữa Suburban, Urban và Downtown. Suburban – nơi thường bị coi là ngoại ô xa xôi – lại xuất hiện rất nhiều trong nhóm giá cao nhất nhờ diện tích lớn và không gian sống thoải mái.
 
-3. Phân tích và Trực quan hóa (Analysis & Visualization)
-Để hiểu rõ các yếu tố ảnh hưởng đến hạnh phúc, nhiều kỹ thuật trực quan hóa dữ liệu đã được áp dụng. Các biểu đồ giúp khám phá mối quan hệ giữa điểm hạnh phúc và các yếu tố quan trọng.
+Và điều thú vị nhất: Rural là khu vực rẻ nhất, nhưng lại sở hữu những căn nhà có diện tích cực lớn (có căn lên tới gần 5000 sqft) với mức giá chỉ bằng một nửa so với một căn nhà nhỏ ở Downtown. Đây chính là cơ hội vàng cho người mua nhà lần đầu hoặc những ai muốn tìm kiếm không gian sống rộng rãi với ngân sách hạn chế.
 
-3.1 Quốc gia hạnh phúc nhất và kém hạnh phúc nhất
-Hình 1: Điểm hạnh phúc của các quốc gia
-Biểu đồ thể hiện 10 quốc gia có điểm hạnh phúc cao nhất và 10 quốc gia có điểm thấp nhất.
-Kết quả cho thấy sự khác biệt rõ rệt giữa hai nhóm. Các quốc gia hạnh phúc nhất thường có điểm số trên 7 và chủ yếu thuộc các khu vực phát triển.
-Ngược lại, các quốc gia kém hạnh phúc có điểm số thấp hơn nhiều, thường dưới 4.
-Điều này cho thấy các yếu tố như kinh tế, sức khỏe và hỗ trợ xã hội có ảnh hưởng lớn đến mức độ hạnh phúc.
-<img width="744" height="525" alt="image" src="https://github.com/user-attachments/assets/944ce073-face-4254-9117-f5398e1a295f" />
+Kết luận: Đừng nhìn vào vị trí – hãy nhìn vào giá trị thực. Mỗi khu vực có một thế mạnh riêng: Urban dành cho người ưa tiện ích, Suburban dành cho người tìm kiếm không gian cao cấp, và Rural dành cho người muốn tối đa hóa diện tích với chi phí thấp.
 
+3. CONVERSATION 2: PHÒNG TẮM VÀ GIÁ NHÀ
+Câu chuyện chính
+"Nhà càng nhiều phòng tắm có đắt hơn không? Sự thật về "càng nhiều càng tốt"."
+Key Insight
+Sau khi phân tích 2000 căn nhà về mối quan hệ giữa số phòng tắm và giá nhà, chúng tôi rút ra ba phát hiện quan trọng:
 
+Thứ nhất, giá nhà tăng dần theo số phòng tắm, nhưng có ngưỡng bão hòa rõ rệt. Từ 1 lên 2 phòng tắm, giá tăng mạnh nhất – khoảng 25-30%. Từ 2 lên 3 phòng tắm, mức tăng chỉ còn khoảng 12%. Và từ 3 lên 4 phòng tắm, mức tăng chỉ vỏn vẹn 5-7%. Điều này cho thấy 3 phòng tắm là con số vàng – đủ để đáp ứng nhu cầu mà không lãng phí.
 
-3.2 Phân bố điểm hạnh phúc
-Hình 2: Phân bố điểm hạnh phúc
-Biểu đồ histogram thể hiện phân bố điểm hạnh phúc của các quốc gia.
-Phần lớn các quốc gia có điểm nằm trong khoảng từ 4 đến 6. Chỉ có một số ít quốc gia có điểm rất cao hoặc rất thấp.
-Điều này cho thấy mức độ hạnh phúc trên thế giới tập trung ở mức trung bình.
-<img width="576" height="404" alt="image" src="https://github.com/user-attachments/assets/31fd60f5-a9d2-4b4d-9204-fa8ae4cf8abd" />
+Thứ hai, có tới gần 15% số căn nhà có số phòng tắm nhiều hơn số phòng ngủ. Đặc biệt, có những căn 1 phòng ngủ nhưng tới 4 phòng tắm. Nghe có vẻ vô lý, nhưng những căn này vẫn có giá cao hơn mức trung bình – chủ yếu tập trung ở khu vực Downtown và Urban, nơi giới thượng lưu coi trọng sự xa xỉ hơn là công năng.
 
+Thứ ba, phòng tắm thứ 4 và thứ 5 hầu như không mang lại giá trị gia tăng đáng kể. So với phòng tắm thứ 2, giá trị mà phòng tắm thứ 4 mang lại chỉ bằng 1/5.
 
+Kết luận: Hãy thông minh khi đầu tư vào phòng tắm. 3 phòng tắm là đủ. Thêm nữa chỉ tốn tiền mà không tăng giá.
 
+4. CONVERSATION 3: TÌNH TRẠNG NHÀ VÀ GIÁ
+Câu chuyện chính
+"Tình trạng nhà "Excellent" có đáng để trả thêm tiền? Dữ liệu nói KHÔNG hẳn vậy."
+Key Insight
+Phân tích 2000 căn nhà theo tình trạng đã mang đến ba phát hiện đáng ngạc nhiên:
 
+Thứ nhất, "Excellent" thực sự đắt hơn, nhưng không đáng kể như nhiều người nghĩ. So với nhà "Poor", nhà "Excellent" có giá cao hơn khoảng 45%. Nhưng so với nhà "Good", chênh lệch chỉ vỏn vẹn 8-10%. Nói cách khác, bước nhảy từ "Good" lên "Excellent" gần như không mang lại giá trị gia tăng.
 
+Thứ hai, có rất nhiều căn nhà "Poor" vẫn có giá cao ngất ngưởng – thậm chí cao hơn cả mức trung bình của "Excellent". Những căn này hầu hết tập trung ở Downtown, có diện tích lớn và năm xây dựng rất cũ (thường trước 1930). Điều này chứng tỏ: vị trí và diện tích mới là yếu tố quyết định, còn tình trạng chỉ là thứ yếu.
 
-3.3 Mối tương quan giữa các yếu tố
-Hình 3: Ma trận tương quan
-Biểu đồ heatmap thể hiện mối tương quan giữa các biến.
-Kết quả cho thấy các yếu tố có tương quan mạnh với hạnh phúc gồm:
-GDP
-Sức khỏe
-Hỗ trợ xã hội
-Điều này cho thấy các quốc gia có nền kinh tế phát triển, tuổi thọ cao và hệ thống xã hội tốt thường có mức độ hạnh phúc cao hơn.
-<img width="667" height="588" alt="image" src="https://github.com/user-attachments/assets/57f76344-bb1d-4d01-84c8-0cd92ead59e3" />
+Thứ ba, mua nhà "Fair" để cải tạo có thể là chiến lược sinh lời rất tốt. Chênh lệch giá giữa "Fair" và "Excellent" là khoảng 28-30% giá trị căn nhà. Nếu bạn bỏ ra 15-20% giá trị để cải tạo một căn "Fair" thành chất lượng gần "Excellent", bạn đã tạo ra lợi nhuận 10-15% ngay lập tức.
 
+Kết luận: Đừng sợ nhà xấu – hãy sợ nhà ở vị trí xấu. Nếu có thể mua được một căn nhà "Poor" hoặc "Fair" ở vị trí đẹp với diện tích tốt, đó chính là cơ hội vàng để cải tạo và gia tăng giá trị.
 
+5. CONVERSATION 4: GARAGE VÀ GIÁ NHÀ
+Câu chuyện chính
+"Garage có thực sự làm tăng giá nhà? Hay chỉ là chiêu trò của môi giới?"
+Key Insight
+Qua phân tích 2000 căn nhà về ảnh hưởng của garage đến giá bán, chúng tôi có ba phát hiện đáng chú ý:
 
-3.4 Mối quan hệ giữa GDP và hạnh phúc
-Hình 4: GDP và điểm hạnh phúc
-Biểu đồ scatter cho thấy mối quan hệ giữa GDP và điểm hạnh phúc.
-Có xu hướng tăng rõ ràng: GDP càng cao thì mức độ hạnh phúc càng cao.
-Tuy nhiên, dữ liệu không hoàn toàn tuyến tính, cho thấy ngoài kinh tế còn nhiều yếu tố khác ảnh hưởng đến hạnh phúc.
-<img width="508" height="412" alt="image" src="https://github.com/user-attachments/assets/917f54b5-8b85-452e-bf28-9e0ad637ddeb" />
+Thứ nhất, nhà có garage đắt hơn nhà không garage trung bình 18%, tương đương khoảng 120,000-150,000 đơn vị tiền tệ. Đây không phải con số nhỏ, và nó cho thấy garage không chỉ là "chiêu trò" của môi giới.
 
+Thứ hai, tầm quan trọng của garage thay đổi đáng kể theo khu vực. Ở Rural (vùng nông thôn), nhà có garage đắt hơn tới 25% so với nhà không garage. Trong khi đó, ở Downtown – nơi đất chật người đông – garage chỉ làm giá tăng khoảng 7%.
 
+Thứ ba, vẫn có tới 23% những căn nhà trong top 10% giá cao nhất không có garage. Những căn này tập trung chủ yếu ở Downtown và Urban, với diện tích thường nhỏ hơn nhưng có tình trạng "Excellent" và vị trí cực kỳ đắc địa.
 
+Kết luận: Nếu bạn đang bán nhà ở nông thôn hoặc ngoại ô, đừng bao giờ tiết kiệm garage – nó sẽ là điểm cộng lớn nhất. Còn nếu bạn đang bán nhà ở trung tâm thành phố, hãy tập trung vào vị trí và tình trạng nhà, garage chỉ là phần ngọn.
 
-
-
-3.5 So sánh theo khu vực
-Hình 5: Điểm hạnh phúc theo khu vực
-Biểu đồ boxplot so sánh mức độ hạnh phúc giữa các khu vực.
-Một số khu vực như châu Âu và Bắc Mỹ có mức hạnh phúc cao hơn, trong khi các khu vực khác có mức thấp hơn và biến động lớn hơn.
-Điều này phản ánh sự khác biệt về điều kiện kinh tế và xã hội giữa các khu vực.
-<img width="741" height="459" alt="image" src="https://github.com/user-attachments/assets/06ab7c7b-4054-44d9-a41c-0f90ae1d43ca" />
-
-
-
-
-
-
-
-
-3.6 Tổng hợp kết quả
-Từ các biểu đồ, có thể rút ra:
-Các quốc gia phát triển có mức độ hạnh phúc cao hơn
-Hạnh phúc tập trung ở mức trung bình
-GDP có mối quan hệ dương với hạnh phúc
-Có sự khác biệt rõ giữa các khu vực
-Những kết quả này cho thấy hạnh phúc chịu ảnh hưởng bởi nhiều yếu tố kết hợp.
-
-4. Kết luận (Conclusion)
-Dự án đã phân tích dữ liệu hạnh phúc toàn cầu bằng các phương pháp trực quan hóa.
-Kết quả cho thấy mức độ hạnh phúc khác nhau rõ rệt giữa các quốc gia và khu vực. Kinh tế đóng vai trò quan trọng, nhưng không phải yếu tố duy nhất.
-Các yếu tố như sức khỏe, hỗ trợ xã hội và điều kiện sống cũng góp phần quan trọng vào mức độ hạnh phúc.
-Nhìn chung, để nâng cao hạnh phúc, cần có sự kết hợp giữa phát triển kinh tế và cải thiện các yếu tố xã hội.
-
-5. Phụ lục (Code)
-Toàn bộ code của dự án được lưu tại:
-https://github.com/nicowilliamxvii/TQHDC_CS441
-
+6. TỔNG KẾT VÀ KHUYẾN NGHỊ
+Bảng tổng hợp 4 Conversation
+#	Conversation	Key Insight ngắn gọn
+1	Location vs Price	Downtown không phải lúc nào cũng đắt nhất. Rural có diện tích lớn, giá rẻ
+2	Bathrooms vs Price	3 phòng tắm là ngưỡng vàng. Thêm nữa không đáng
+3	Condition vs Price	"Excellent" đắt hơn "Good" không đáng kể. Mua "Fair" cải tạo là lời nhất
+4	Garage vs Price	Garage quan trọng nhất ở Rural (+25%), ít quan trọng nhất ở Downtown (+7%)
 
