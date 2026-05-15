@@ -30,6 +30,7 @@ Thống kê nhanh
 2. CONVERSATION 1: SO SÁNH GIÁ THEO VỊ TRÍ
 Câu chuyện chính
 "Downtown có thực sự đắt hơn Suburban và Rural không? Dữ liệu 2000 căn nhà cho thấy điều bất ngờ."
+
 Key Insight
 Sau khi phân tích 2000 căn nhà từ dữ liệu, chúng tôi phát hiện ra rằng: Downtown không phải lúc nào cũng đắt nhất. Mặc dù nhiều người nghĩ rằng trung tâm thành phố là nơi có giá trị nhất, nhưng thực tế cho thấy Urban mới là khu vực có giá trung bình cao nhất, trong khi Downtown chỉ đứng thứ hai. Điều này có thể do Urban tập trung nhiều căn hộ cao cấp, tiện ích hiện đại và mật độ dân cư đông đúc.
 
