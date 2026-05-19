@@ -34,6 +34,8 @@
 Bieu do histogram the hien so luong can nha theo tung khoang gia $100K tren 2.000 quan sat.
 
 ### Thong ke mo ta
+<img width="494" height="236" alt="image" src="https://github.com/user-attachments/assets/023800dd-69ca-4726-9c01-a6233e21f26b" />
+
 
 ```
 Gia trung binh  :  $537.677
@@ -54,6 +56,8 @@ Min / Max        :  $50.005  /  $999.656
 Gia su thong thuong: nha cang lon thi cang dat. Du lieu noi gi?
 
 ### He so tuong quan Pearson voi gia nha
+<img width="644" height="254" alt="image" src="https://github.com/user-attachments/assets/384d259d-e833-4c9e-b73c-976f23e68a69" />
+
 
 | Bien so | He so tuong quan (r) | Nhan xet |
 |---------|----------------------|----------|
@@ -104,6 +108,8 @@ Mo hinh vung do thi tu trung tam ra ngoai:
         │   └─────────────────────┘   │
         └─────────────────────────────┘
 ```
+<img width="644" height="250" alt="image" src="https://github.com/user-attachments/assets/d569b561-d29d-4f9f-9a00-ee0b65a7cf06" />
+
 
 > [!NOTE]
 > **Insight Q3:** Suburban dan dau voi $557K, Urban thap nhat $519K — chenh lech chi **$38.000 (~7%)**.
@@ -131,6 +137,8 @@ Mo hinh vung do thi tu trung tam ra ngoai:
 > Garage co tac dong rat nho.
 >
 > Day la nghich ly — nhieu kha nang do yeu to **vi tri vi mo (micro-location)** hoac quy mo nha bi che khuat ben trong nhom "Fair" gay ra hien tuong nay.
+> <img width="644" height="253" alt="image" src="https://github.com/user-attachments/assets/12b559d4-3bef-47e3-b6a2-e02f10181563" />
+
 
 ---
 
